@@ -10,7 +10,7 @@ let Business = new Schema({
     type: String
   },
   business_gst_number: {
-    type: Number
+    type: String
   }
 }, {
   collection: 'business'

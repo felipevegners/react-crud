@@ -5,7 +5,7 @@ export default class Edit extends Component {
     constructor(props) {
     super(props)
     this.onChangePersonName = this.onChangePersonName.bind(this)
-    this.onchangeBusinessName = this.onchangeBusinessName.bind(this)
+    this.onChangeBusinessName = this.onChangeBusinessName.bind(this)
     this.onChangeGstNumber = this.onChangeGstNumber.bind(this)
     this.onSubmit = this.onSubmit.bind(this)
   
@@ -17,14 +17,16 @@ export default class Edit extends Component {
   }
   componentDidMount() {
     axios.get('http://localhost:4000/business/edit/'+this.props.match.params.id)
-      .then(res => {
+      .then(response => {
         this.setState({
-          person_name: res.data.person_name,
-          business_name: res.data.business_name,
-          business_gst_number: res.data.business_gst_number
+          person_name: response.data.person_name,
+          business_name: response.data.business_name,
+          business_gst_number: response.data.business_gst_number
         })
       })
-      .catch(err => console.log(err))
+      .catch(function (error) {
+        console.log(error);
+      })
   }
     onChangePersonName(e) {
     this.setState({
@@ -32,7 +34,7 @@ export default class Edit extends Component {
     })
   }
 
-  onchangeBusinessName(e) {
+  onChangeBusinessName(e) {
     this.setState({
       business_name: e.target.value
     })
@@ -51,10 +53,11 @@ export default class Edit extends Component {
       business_name: this.state.business_name,
       business_gst_number: this.state.business_gst_number
     }
-    axios.post('http://localhost:4000/business/update'+this.props.match.params.id, obj)
+    axios.post('http://localhost:4000/business/update/'+this.props.match.params.id, obj)
     .then(res => console.log(res.data))
 
     this.props.history.push('/index')
+    document.location.reload(true)
   }
 
   render() {
@@ -73,7 +76,7 @@ export default class Edit extends Component {
           </div>
           <div className="form-group">
             <label>Business Name: </label>
-            <input type="text" 
+            <input type="text"
               className="form-control"
               value={this.state.business_name}
               onChange={this.onChangeBusinessName}
