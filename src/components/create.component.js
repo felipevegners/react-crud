@@ -53,6 +53,8 @@ export default class Create extends Component {
       business_name: '',
       business_gst_number: ''
     })
+
+    document.location.reload(true)
   }
 
   render() {
