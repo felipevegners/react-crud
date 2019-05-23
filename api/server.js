@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
-const PORT = 3000
+const PORT = 8080
 const cors = require('cors')
 const mongoose = require('mongoose')
 const config = require('./DB.js')
@@ -18,5 +18,6 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 
 app.use('/business', businessRoute)
+app.use(express.static(__dirname + '/../build'));
 
 app.listen(PORT, () => console.log('Server is running on port:', PORT) )

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import axios from 'axios'
+import axiosService from '../utils/axios_service'
 import TableRow from './TableRow'
 export default class Index extends Component {
   constructor(props) {
@@ -9,7 +9,7 @@ export default class Index extends Component {
     }
   }
   componentDidMount() {
-    axios.get('/business')
+    axiosService.get('/business')
       .then(response => {
         this.setState({ business: response.data })
       })
