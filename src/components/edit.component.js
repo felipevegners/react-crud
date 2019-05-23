@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import axios from 'axios'
-
+import axiosService from '../utils/axios_service'
 export default class Edit extends Component {
     constructor(props) {
     super(props)
@@ -16,7 +15,7 @@ export default class Edit extends Component {
     }
   }
   componentDidMount() {
-    axios.get('http://localhost:4000/business/edit/'+this.props.match.params.id)
+    axiosService.get('/business/edit/'+this.props.match.params.id)
       .then(response => {
         this.setState({
           person_name: response.data.person_name,
@@ -53,7 +52,7 @@ export default class Edit extends Component {
       business_name: this.state.business_name,
       business_gst_number: this.state.business_gst_number
     }
-    axios.post('http://localhost:4000/business/update/'+this.props.match.params.id, obj)
+    axiosService.post('/business/update/'+this.props.match.params.id, obj)
     .then(res => console.log(res.data))
 
     this.props.history.push('/index')
