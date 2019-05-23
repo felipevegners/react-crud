@@ -1,3 +1,3 @@
 module.exports = {
-  DB: 'mongodb://localhost:27017/reactcrud'
+  DB: 'mongodb://vgn:vgn@2019@ds121301.mlab.com:21301/reactcrud'
 }
