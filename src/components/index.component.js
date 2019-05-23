@@ -9,7 +9,7 @@ export default class Index extends Component {
     }
   }
   componentDidMount() {
-    axios.get('http://vegners.com/business')
+    axios.get('/business')
       .then(response => {
         this.setState({ business: response.data })
       })
