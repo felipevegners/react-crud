@@ -11,7 +11,10 @@
     "react-scripts": "3.0.1"
   },
   "scripts": {
-    "build": "react-scripts build && cd api && node server"
+    "start": "react-scripts build && cd api && node server",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
