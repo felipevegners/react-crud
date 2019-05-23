@@ -16,7 +16,7 @@ export default class Edit extends Component {
     }
   }
   componentDidMount() {
-    axios.get('http://localhost:4000/business/edit/'+this.props.match.params.id)
+    axios.get('/business/edit/'+this.props.match.params.id)
       .then(response => {
         this.setState({
           person_name: response.data.person_name,
