@@ -58,7 +58,7 @@ export default class Edit extends Component {
     .then(res => console.log(res.data))
 
     this.props.history.push('/index')
-    document.location.reload(true)
+    // document.location.reload(true)
   }
 
   render() {
