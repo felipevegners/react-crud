@@ -12,7 +12,7 @@
   },
   "scripts": {
     "start": "react-scripts build",
-    "connect": "cd api && node server"
+    "heroku-postbuild": "cd api && yarn && node server"
   },
   "eslintConfig": {
     "extends": "react-app"
