@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import axiosService from '../utils/axios_service'
+// import axiosService from '../utils/axios_service'
 class TableRow extends Component {
 
   constructor(props) {
@@ -8,7 +8,7 @@ class TableRow extends Component {
         this.delete = this.delete.bind(this);
     }
     delete() {
-      axiosService.get('/business/delete/'+this.props.obj._id)
+      axios.get('/business/delete/'+this.props.obj._id)
         .then(console.log('Deleted'))
         .catch(err => console.log(err))
 

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import axiosService from '../utils/axios_service'
+// import axiosService from '../utils/axios_service'
 
 export default class Create extends Component {
   constructor(props) {
@@ -45,7 +45,7 @@ export default class Create extends Component {
       business_name: this.state.business_name,
       business_gst_number: this.state.business_gst_number
     }
-    axiosService.post('/business/add', obj).then(res => console.log(res.data))
+    axios.post('/business/add', obj).then(res => console.log(res.data))
 
 
     this.setState({
