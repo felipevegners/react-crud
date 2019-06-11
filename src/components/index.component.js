@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import TableRow from './TableRow'
-// import axiosService from '../utils/axios_service'
 export default class Index extends Component {
   constructor(props) {
     super(props)
