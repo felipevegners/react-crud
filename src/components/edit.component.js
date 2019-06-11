@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-
-// import axiosService from '../utils/axios_service'
 export default class Edit extends Component {
     constructor(props) {
     super(props)
@@ -66,10 +64,10 @@ export default class Edit extends Component {
   render() {
     return (
       <div style={{ marginTop: 10 }}>
-        <h3 align="center">Update Business</h3>
+        <h3 align="center">Atualizar Atendimento</h3>
         <form onSubmit={this.onSubmit}>
           <div className="form-group">
-              <label>Person Name:  </label>
+              <label>Cliente:  </label>
               <input 
                 type="text" 
                 className="form-control" 
@@ -78,7 +76,7 @@ export default class Edit extends Component {
                 />
           </div>
           <div className="form-group">
-            <label>Business Name: </label>
+            <label>Empresa: </label>
             <input type="text"
               className="form-control"
               value={this.state.business_name}
@@ -86,7 +84,7 @@ export default class Edit extends Component {
               />
           </div>
           <div className="form-group">
-            <label>GST Number: </label>
+            <label>Contato: </label>
             <input type="text" 
               className="form-control"
               value={this.state.business_gst_number}
@@ -95,7 +93,7 @@ export default class Edit extends Component {
           </div>
           <div className="form-group">
             <input type="submit" 
-              value="Update Business" 
+              value="Atualizar Atendimento" 
               className="btn btn-primary"
             />
           </div>

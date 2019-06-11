@@ -62,10 +62,10 @@ export default class Create extends Component {
   render() {
     return (
       <div style={{marginTop: 10}}>
-          <h3>Add New Business</h3>
+          <h3>Novo Atendimento</h3>
           <form onSubmit={ this.onSubmit }>
           <div className="form-group">
-            <label>Add Person Name:  </label>
+            <label>Cliente:  </label>
             <input
               type="text"
               className="form-control"
@@ -75,7 +75,7 @@ export default class Create extends Component {
           </div>
 
           <div className="form-group">
-            <label>Add Business Name: </label>
+            <label>Empresa: </label>
             <input
               type="text"
               className="form-control"
@@ -85,7 +85,7 @@ export default class Create extends Component {
           </div>
 
           <div className="form-group">
-            <label>Add GST Number: </label>
+            <label>Contato: </label>
             <input
               type="text"
               className="form-control"
@@ -94,7 +94,7 @@ export default class Create extends Component {
             />
           </div>
               <div className="form-group">
-                  <input type="submit" value="Register Business" className="btn btn-primary"/>
+                  <input type="submit" value="Criar Atendimento" className="btn btn-primary"/>
               </div>
           </form>
       </div>

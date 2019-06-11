@@ -29,10 +29,10 @@ class TableRow extends Component {
             {this.props.obj.business_gst_number}
           </td>
           <td>
-            <Link to={"/edit/"+this.props.obj._id} className="btn btn-primary">Edit</Link>
+            <Link to={"/edit/"+this.props.obj._id} className="btn btn-primary">Editar</Link>
           </td>
           <td>
-            <button onClick={ this.delete } className="btn btn-danger">Delete</button>
+            <button onClick={ this.delete } className="btn btn-danger">Excluir</button>
           </td>
         </tr>
     )
