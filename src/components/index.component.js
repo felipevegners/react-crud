@@ -10,7 +10,7 @@ export default class Index extends Component {
     }
   }
   componentDidMount() {
-    axios.get('/business')
+    axios.get(`${process.env.REACT_APP_DB_URL}/business`)
       .then(response => {
         this.setState({ business: response.data })
       })

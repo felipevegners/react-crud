@@ -11,6 +11,7 @@
     "react-scripts": "3.0.1"
   },
   "scripts": {
+    "start-dev": "REACT_APP_DB_URL=http://localhost:5000 react-scripts start",
     "start": "cd api && yarn && node server.js",
     "build": "react-scripts build"
   },

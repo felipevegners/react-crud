@@ -1,5 +1,8 @@
+//Calls the enviroment variables
+require('dotenv/config')
+
 const express = require('express')
-const path = require('path');
+const path = require('path')
 const app = express()
 const bodyParser = require('body-parser')
 const PORT = process.env.PORT || 5000
@@ -9,9 +12,9 @@ const config = require('./DB.js')
 const businessRoute = require('./business.route')
 
 mongoose.Promise = global.Promise
-mongoose.connect(config.DB, { useNewUrlParser: true }).then(
+mongoose.connect(config.DB, { useNewUrlParser: true, useFindAndModify: false }).then(
   () => { console.log('Database is connected bro!') },
-  err => { console.log('Can not connect to the database' + err) }
+  err => { console.log('Can not connect to the database ' + err) }
   )
 
 app.use(cors())
