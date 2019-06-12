@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import TableRow from './TableRow'
+
 export default class Index extends Component {
   constructor(props) {
     super(props)
@@ -9,7 +10,8 @@ export default class Index extends Component {
     }
   }
   componentDidMount() {
-    axios.get(`${process.env.REACT_APP_DB_URL}/business`)
+    // axios.get(`${process.env.REACT_APP_DB_URL}/business`)
+    axios.get('http://localhost:5000/business')
       .then(response => {
         this.setState({ business: response.data })
       })
