@@ -92,10 +92,7 @@ export default class Edit extends Component {
               />
           </div>
           <div className="form-group">
-            <input type="submit" 
-              value="Atualizar Atendimento" 
-              className="btn btn-primary"
-            />
+            <button type="submit" className="btn btn-primary">Atualizar</button>
           </div>
         </form>
       </div>
