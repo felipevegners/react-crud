@@ -5,11 +5,14 @@ const express = require('express')
 const path = require('path')
 const app = express()
 const bodyParser = require('body-parser')
-const PORT = process.env.PORT || 5000
+const PORT = process.env.PORT || 5001
 const cors = require('cors')
 const mongoose = require('mongoose')
-const config = require('./DB.js')
-const businessRoute = require('./business.route')
+const config = require('./config/DB')
+const passport = require('passport')
+
+const businessRoute = require('./routes/business')
+const users = require('./routes/users')
 
 mongoose.Promise = global.Promise
 mongoose.connect(config.DB, { useNewUrlParser: true, useFindAndModify: false }).then(
@@ -29,6 +32,14 @@ app.use(express.static(path.join(__dirname, '/../build')))
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname+'/../build/index.html'))
 });
+
+// Passport middleware
+app.use(passport.initialize())
+
+// Passport config
+require('./config/passport')(passport)
+
+app.use('/users', users)
 
 
 app.listen(PORT, () => console.log('Server is running on port:', PORT) )

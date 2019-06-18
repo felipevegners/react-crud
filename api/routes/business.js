@@ -1,7 +1,7 @@
 const express = require('express')
 const businessRoutes = express.Router()
 
-let Business = require('./business.model')
+let Business = require('../models/Business')
 
 businessRoutes.route('/add').post(function (req, res) {
   let business = new Business(req.body)
