@@ -10,7 +10,7 @@
     },
     {
       "src": "api/server.js",
-      "use": "@now/node-server",
+      "use": "@now/node",
       "config": {
         "maxLambdaSize": "12mb"
       }
