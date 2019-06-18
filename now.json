@@ -3,7 +3,7 @@
   "name": "react-crud-auth",
   "builds": [
     { "src": "api/server.js", 
-      "use": "@now/node", 
+      "use": "@now/node-server", 
       "config": { "maxLambdaSize": "12mb" }
     },
     { "src": "package.json",
