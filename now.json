@@ -1,7 +1,8 @@
 {
   "version": 2,
   "name": "react-crud-auth",
-  "builds": [{
+  "builds": [
+    {
       "src": "package.json",
       "use": "@now/static-build",
       "config": {
@@ -9,10 +10,10 @@
       }
     },
     {
-      "src": "api/server.js",
-      "use": "@now/node",
+      "src": "api/package.json",
+      "use": "@now/static-build",
       "config": {
-        "maxLambdaSize": "12mb"
+        "distDir": "build"
       }
     }
   ],
