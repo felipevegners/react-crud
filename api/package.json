@@ -5,7 +5,6 @@
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
-    "now-build": "cd ../build && yarn && yarn run build",
     "heroku-postbuild": "cd ../build && yarn && yarn run build"
   },
   "keywords": [],
