@@ -55,7 +55,7 @@ export default class Create extends Component {
       business_gst_number: ''
     })
 
-    this.props.history.push('/index')
+    this.props.history.push('/business')
     document.location.reload(true)
   }
 

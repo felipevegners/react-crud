@@ -57,7 +57,7 @@ export default class Edit extends Component {
     // axios.post(`${ process.env.REACT_APP_DB_URL }/business/update/${ this.props.match.params.id }`, obj)
     .then(res => console.log(res.data))
 
-    this.props.history.push('/index')
+    this.props.history.push('/business')
     document.location.reload(true)
   }
 
